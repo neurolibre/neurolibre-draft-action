@@ -1,10 +1,10 @@
-name: Open Journals PDF Generator
+name: NeuroLibre Journals PDF Generator
 description: Create a draft PDF for an Open Journals paper
 inputs:
   journal:
     description: Target journal, must be either "joss" or "jose"
     required: false
-    default: joss
+    default: neurolibre
   paper-path:
     description: >-
         Path to the main paper Markdown file, relative to the
@@ -13,12 +13,12 @@ inputs:
     default: 'paper.md'
 runs:
   using: docker
-  image: 'docker://openjournals/inara:latest'
+  image: 'docker://neurolibre/inara:latest'
   env:
     GIT_SHA: $GITHUB_SHA
     JOURNAL: ${{ inputs.journal }}
   args:
-    - -o pdf
+    - -o neurolibre
     - ${{ inputs.paper-path }}
 branding:
   icon: file-text
