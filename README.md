@@ -1,7 +1,7 @@
-Open Journals PDF Generator
+NeuroLibre PDF Generator
 ===========================
 
-Create a draft PDF of an Open Journals article.
+Create a draft companion PDF for NeuroLibre Reproducible Preprints (NRPs).
 
 Usage
 -----
@@ -19,9 +19,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Build draft PDF
-        uses: openjournals/openjournals-draft-action@master
+        uses: neurolibre/neurolibre-draft-action@master
         with:
-          journal: joss
+          journal: neurolibre
           # This should be the path to the paper within your repo.
           paper-path: paper.md
       - name: Upload
@@ -44,8 +44,7 @@ The build can be configured by setting the following inputs.
 
 ### `journal`
 
-The journal for to which this paper will be submitted. May be
-either `joss` or `jose`. Defaults to `joss`.
+The journal for to which this paper will be submitted.
 
 ### `paper-path`
 
